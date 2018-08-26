@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>TECuidamosApp</title>
-    <link rel="icon" type="img/ico" href="">
+    <link rel="icon" type="img/ico" href="materialize/notification_none.png">
     <link href="materialize/css/materialize.min.css" media="screen,projection" / rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,24 +17,18 @@
 </head>
 
 <body>
-    <h3 style="left: 50%; transfrom: translate(-50%);" align: "center">Registra<span class="indigo-text text-darken-4" style="font-weight: bold;" align="center">TEC</span></h3>
+    <h4 align="center" class="indigo-text text-darken-4" style="font-width: bold;">Registrar</h4>
 
     <div class="row">
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s6">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">Nombre</label>
                 </div>
                 <div class="input-field col s6">
                     <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                    <label for="disabled">Disabled</label>
+                    <label for="last_name">Apellidos</label>
                 </div>
             </div>
             <div class="row">
@@ -49,22 +43,15 @@
                     <label for="email">Email</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12">
-                    This is an inline input field:
-                    <div class="input-field inline">
-                        <input id="email" type="email" class="validate">
-                        <label for="email" data-error="wrong" data-success="right">Email</label>
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
-    <div style="position: absolute; left: 50%; bottom: 0; transform: translate(-50%, -50%);">
+    <div style="position: absolute; left: 50%; bottom: 10; transform: translate(-50%, -50%);">
 
         <a class="waves-effect waves-light btn-large indigo darken-4" style="position: relative; left: 50%; transform: translate(-50%);">Registrarme</a>
 
     </div>
+    </form>
+    </div>
+
     <!-- Scripts -->
     <script src="jquery.js"></script>
     <script src="materialize/js/materialize.js"></script>
