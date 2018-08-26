@@ -156,6 +156,7 @@
     <script src="jquery.js"></script>
     <script src="materialize/js/materialize.js"></script>
     <script type="text/javascript">
+<<<<<<< HEAD
         var Editar;
 
         (function(global, $) {
@@ -175,6 +176,28 @@
 
             Editar.init();
         })(this, jQuery);
+=======
+      var Editar; 
+  
+      (function(global, $) {
+          //Main Object
+          Editar = {
+            numeroContacto: 1,
+              
+            init: function() {
+              var _this = Editar;  
+              
+              $(".list-user").on("click", function() {
+                $(".list-user").removeClass("list-user-active");
+                $(this).addClass("list-user-active");
+                window.location.replace('/Users/mimit/Desktop/hack2018/reporteDetalle.html');
+              });
+            },
+          };
+  
+          Editar.init();
+      })(this, jQuery);
+>>>>>>> 33ffb1802d149ac382f325959e7e70889a2695e3
     </script>
 </body>
 
