@@ -1,0 +1,12 @@
+.list-user{
+  cursor: pointer;
+}
+
+.list-user:hover {
+  background-color: #e8eaf6;
+}
+
+.list-user-active {
+  background-color: #e8eaf6;
+  cursor: pointer;
+}
