@@ -21,18 +21,16 @@
 <body>
     <h4 align="center" class="indigo-text text-darken-4" style="font-weight: bold;">Reporte</h4>
 
-    <div class="row">
+    <div id="info" class="row">
         <form class="col s12">
             <div class="row">
-                <div id="select" class="input-field col s12" class="select">
+                <div class="input-field col s12" class="select">
                     <select>
                           <option value="" disabled selected>Tipo de emergencia</option>
-                          <option value="1">Robo</option>
-                          <option value="2">Tiroteo</option>
-                          <option value="3">Asalto</option>
-                          <option value="4">Secuestro</option>
-                          <option value="5">Violación</option>
-                          <option value="6">Incenedio</option>
+                          <option value="1">Tiroteo</option>
+                          <option value="2">Asalto</option>
+                          <option value="3">Secuestro</option>
+                          <option value="4">Violación</option>
                         </select>
                     <!--<label>Tipo de Emergencia</label>-->
 
@@ -101,6 +99,10 @@
                         '</div>' +
                         '</div>';
                     $("#campo").append(newElem);
+                    $("#hora").attr("disabled", true);
+                    $("#desc").attr("disabled", true);
+                    $(".select-dropdown").attr("disabled", true);
+                    $("#info").attr("disabled", true);
                     $("#btn_enviar").hide();
                     setTimeout(function() {
                         $("#load").hide();
