@@ -24,32 +24,35 @@
     <div class="row">
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s12" class="select-dropdown">
+                <div id="select" class="input-field col s12" class="select">
                     <select>
                           <option value="" disabled selected>Tipo de emergencia</option>
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
+                          <option value="1">Robo</option>
+                          <option value="2">Tiroteo</option>
+                          <option value="3">Asalto</option>
+                          <option value="4">Secuestro</option>
+                          <option value="5">Violación</option>
+                          <option value="6">Incenedio</option>
                         </select>
-                    <label>Tipo de Emergencia</label>
+                    <!--<label>Tipo de Emergencia</label>-->
 
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <label for="hora" class="active">Hora del evento</label>
-                    <input id="hora" type="text" class="clock picker">
+                    <label for="hora" class="active">Hora del incidente</label>
+                    <input id="hora" type="text" class="timepicker">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="desc" class="materialize-textarea" data-length="120"></textarea>
+                    <textarea id="desc" class="materialize-textarea" data-length="1000"></textarea>
                     <label for="desc">Comentarios</label>
                 </div>
             </div>
             <div style="position: absolute; left: 50%; bottom: 10; transform: translate(-50%, -50%);">
 
-                <a class="waves-effect waves-light btn-large indigo darken-4" style="position: relative; left: 50%; transform: translate(-50%);">Registrarme</a>
+                <a class="waves-effect waves-light btn-large indigo darken-4" style="position: relative; left: 50%; transform: translate(-50%);">Enviar</a>
 
             </div>
         </form>
