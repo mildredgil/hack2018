@@ -24,7 +24,9 @@ Create table Reportes (
     Ubicacion varchar (50),
     Latitud decimal(18,4),
     Longitud decimal (18, 4),
-    idUsuario varchar(10)
+    idUsuario varchar(10),
+    Status varchar(10),
+    Timestamp datetime
     );
     
 CREATE table ContactoEmergencia (
