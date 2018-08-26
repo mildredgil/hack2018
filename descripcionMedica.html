@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TECuidamosApp</title>
+    <link rel="icon" type="img/ico" href="materialize/notification_none.png">
+    <link href="materialize/css/materialize.min.css" media="screen,projection" / rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+
+<body>
+    <h4 align="center" class="indigo-text text-darken-4" style="font-weight: bold;">Reporte Médico</h4>
+
+    <div id="info" class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12" class="select">
+                    <select disabled>
+                          <option value="" disabled selected>Emergencia Médica</option>
+                        </select>
+                    <!--<label>Tipo de Emergencia</label>-->
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="hora" class="active">Hora del incidente</label>
+                    <input id="hora" type="text" class="timepicker">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="desc" class="materialize-textarea" data-length="1000"></textarea>
+                    <label for="desc">Comentarios</label>
+                </div>
+            </div>
+            <div id="campo" style="position: absolute; left: 50%; bottom: 10; transform: translate(-50%, -50%);">
+
+                <a id="btn_enviar" class="waves-effect waves-light btn-large indigo darken-4" style="position: relative; left: 50%; transform: translate(-50%);">Enviar</a>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="jquery.js"></script>
+    <script src="materialize/js/materialize.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+
+        $('.timepicker').pickatime({
+            default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+            fromnow: 0, // set default time to * milliseconds from now (using with default = 'now')
+            twelvehour: false, // Use AM/PM or 24-hour format
+            donetext: 'OK', // text for done-button
+            cleartext: 'Clear', // text for clear-button
+            canceltext: 'Cancel', // Text for cancel-button,
+            container: undefined, // ex. 'body' will append picker to body
+            autoclose: false, // automatic close timepicker
+            ampmclickable: true, // make AM PM clickable
+            aftershow: function() {} //Function for after opening timepicker
+        });
+        var descripcion;
+        (function(global, $) {
+            //Main Object
+            descripcion = {
+                init: function() {
+                    var _this = descripcion;
+                    $("#btn_enviar").on("click", function() {
+                        _this.status();
+
+                    });
+                },
+                status: function() {
+                    var newElem = '<div id="load" class="preloader-wrapper active">' +
+                        '<div class="spinner-layer spinner-yellow-only">' +
+                        '<div class="circle-clipper left">' +
+                        '<div class="circle"></div>' +
+                        '</div><div class="gap-patch">' +
+                        '<div class="circle"></div>' +
+                        '</div><div class="circle-clipper right">' +
+                        '<div class="circle"></div>' +
+                        '</div>' +
+                        '</div>';
+                    $("#campo").append(newElem);
+                    $("#hora").attr("disabled", true);
+                    $("#desc").attr("disabled", true);
+                    $("#info").attr("disabled", true);
+                    $("#btn_enviar").hide();
+                    setTimeout(function() {
+                        $("#load").hide();
+                        $("#btn_enviar").removeClass("indigo");
+                        $("#btn_enviar").removeClass("darken-4");
+                        $("#btn_enviar").addClass("green");
+                        $("#btn_enviar").text("Atendido!");
+                        $("#btn_enviar").show();
+                        setTimeout(function() {
+                            window.location.href = "../hack2018/menuAyuda.html";
+                        }, 2000);
+                    }, 3000);
+                }
+
+            };
+            descripcion.init();
+        })(this, jQuery);
+    </script>
+
+</body>
+
+</html>

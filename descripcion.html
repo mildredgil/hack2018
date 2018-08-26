@@ -21,18 +21,16 @@
 <body>
     <h4 align="center" class="indigo-text text-darken-4" style="font-weight: bold;">Reporte</h4>
 
-    <div class="row">
+    <div id="info" class="row">
         <form class="col s12">
             <div class="row">
-                <div id="select" class="input-field col s12" class="select">
+                <div class="input-field col s12" class="select">
                     <select>
                           <option value="" disabled selected>Tipo de emergencia</option>
-                          <option value="1">Robo</option>
-                          <option value="2">Tiroteo</option>
-                          <option value="3">Asalto</option>
-                          <option value="4">Secuestro</option>
-                          <option value="5">Violación</option>
-                          <option value="6">Incenedio</option>
+                          <option value="1">Tiroteo</option>
+                          <option value="2">Asalto</option>
+                          <option value="3">Secuestro</option>
+                          <option value="4">Violación</option>
                         </select>
                     <!--<label>Tipo de Emergencia</label>-->
 
@@ -50,9 +48,9 @@
                     <label for="desc">Comentarios</label>
                 </div>
             </div>
-            <div style="position: absolute; left: 50%; bottom: 10; transform: translate(-50%, -50%);">
+            <div id="campo" style="position: absolute; left: 50%; bottom: 10; transform: translate(-50%, -50%);">
 
-                <a class="waves-effect waves-light btn-large indigo darken-4" style="position: relative; left: 50%; transform: translate(-50%);">Enviar</a>
+                <a id="btn_enviar" class="waves-effect waves-light btn-large indigo darken-4" style="position: relative; left: 50%; transform: translate(-50%);">Enviar</a>
 
             </div>
         </form>
@@ -78,6 +76,50 @@
             ampmclickable: true, // make AM PM clickable
             aftershow: function() {} //Function for after opening timepicker
         });
+        var descripcion;
+        (function(global, $) {
+            //Main Object
+            descripcion = {
+                init: function() {
+                    var _this = descripcion;
+                    $("#btn_enviar").on("click", function() {
+                        _this.status();
+
+                    });
+                },
+                status: function() {
+                    var newElem = '<div id="load" class="preloader-wrapper active">' +
+                        '<div class="spinner-layer spinner-yellow-only">' +
+                        '<div class="circle-clipper left">' +
+                        '<div class="circle"></div>' +
+                        '</div><div class="gap-patch">' +
+                        '<div class="circle"></div>' +
+                        '</div><div class="circle-clipper right">' +
+                        '<div class="circle"></div>' +
+                        '</div>' +
+                        '</div>';
+                    $("#campo").append(newElem);
+                    $("#hora").attr("disabled", true);
+                    $("#desc").attr("disabled", true);
+                    $(".select-dropdown").attr("disabled", true);
+                    $("#info").attr("disabled", true);
+                    $("#btn_enviar").hide();
+                    setTimeout(function() {
+                        $("#load").hide();
+                        $("#btn_enviar").removeClass("indigo");
+                        $("#btn_enviar").removeClass("darken-4");
+                        $("#btn_enviar").addClass("green");
+                        $("#btn_enviar").text("Atendido!");
+                        $("#btn_enviar").show();
+                        setTimeout(function() {
+                            window.location.href = "../hack2018/menuAyuda.html";
+                        }, 2000);
+                    }, 3000);
+                }
+
+            };
+            descripcion.init();
+        })(this, jQuery);
     </script>
 
 </body>
