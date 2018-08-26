@@ -1,0 +1,9 @@
+﻿  hello-myo.cpp
+c:\users\angfi\desktop\myo-sdk-win-0.9.0 (1)\myo-sdk-win-0.9.0\include\myo\cxx\detail\throwonerror.hpp(39): warning C4297: 'myo::ThrowOnError::~ThrowOnError': function assumed not to throw an exception but does
+  c:\users\angfi\desktop\myo-sdk-win-0.9.0 (1)\myo-sdk-win-0.9.0\include\myo\cxx\detail\throwonerror.hpp(39): note: destructor or deallocator has a (possibly implicit) non-throwing exception specification
+c:\users\angfi\desktop\myo-sdk-win-0.9.0 (1)\myo-sdk-win-0.9.0\include\myo\cxx\detail\throwonerror.hpp(45): warning C4297: 'myo::ThrowOnError::~ThrowOnError': function assumed not to throw an exception but does
+  c:\users\angfi\desktop\myo-sdk-win-0.9.0 (1)\myo-sdk-win-0.9.0\include\myo\cxx\detail\throwonerror.hpp(45): note: destructor or deallocator has a (possibly implicit) non-throwing exception specification
+c:\users\angfi\desktop\myo-sdk-win-0.9.0 (1)\myo-sdk-win-0.9.0\samples\hello-myo.cpp(77): warning C4101: 'start': unreferenced local variable
+  hello-myo-VisualStudio2012.vcxproj -> C:\Users\angfi\Desktop\myo-sdk-win-0.9.0 (1)\myo-sdk-win-0.9.0\samples\x64\Debug\hello-myo.exe
+  Copy required dlls to output directory
+          1 file(s) copied.
